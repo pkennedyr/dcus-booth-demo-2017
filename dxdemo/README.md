@@ -20,22 +20,11 @@ Make sure these things are done before you run this demo for the very first time
 
 	![](./images/login.png)
 	
-3. Create a directory called ```~/dxdemo``` 
+3. Clone `https://github.com/mikegcoleman/dcus-booth-demo-2017.git` onto the demo machine
 
-4. In the ```~/dxdemo``` directory create a ```docker-compose.yml``` file w/ the following content:
-
-		version: '3.1'
-		services:
-    	  web:
-    	    image: dcdemo/docker-pets:latest
-        	 ports:
-             - 5000:5000
-           healthcheck:
-             interval: 10s
-             timeout: 2s
-             retries: 3
+		$ git clone https://github.com/mikegcoleman/dcus-booth-demo-2017.git 
              
-5. Navigate in a web browser to [https://cloud.docker.com](https://cloud.docker.com) and log in w/ the credentials in step 2. 
+5. Navigate in a web browser to [https://cloud.docker.com](https://cloud.docker.com) and log in w/ the credentials in step 3. 
 
 > **Note** If your top menu does not look like the image below, click the ```Swarm Mode``` slider at the top of the left hand menu
 
@@ -48,9 +37,9 @@ For this demo I have Docker for Mac (or Docker for Windows) installed, and I've 
 
 So let's jump in and start by deploying our simple web app locally. 
 
-1. Change into the `dxdemo` directory
+1. Change into the `dxdemo` directory (this is assuming you cloned the repo into the user home directory)
 
-		$ cd ~/dxdemo
+		$ cd ~/dcus-booth-demo-2017/dxdemo
 
 2. Examine the contents of the `docker-compose.yml` file 
 
@@ -110,9 +99,9 @@ So, let's pretend we've gone ahead and created a new Swarm. Let's use Docker for
 		
 	> **Note** You're not actually attached to a node in the Swarm cluster your are simply pointing your local machine at the cluster running in AWS
 	
-3. Change into the `dxdemo` directory
+3. Change into the `dxdemo` directory (this assumes you cloned the repo into user home directory)
 
-		$ cd ~/dxdemo
+		$ cd ~/dcus-booth-demo-2017/dxdemo
 		
 4. Deploy the application into AWS
 
@@ -152,9 +141,9 @@ Let's attach to our Azure-based swarm and deploy our application again
 		83x4rl5i7uibdvsqscyy1ygod *  mike-booth-1  Ready   Active        Leader
 		str061ca3ymfajvh7obqm0awc    mike-booth-3  Ready   Active  
 		
-3. Change into the `dxdemo` directory
+3. Change into the `dxdemo` directory (this assumes you cloned the repo into the current user home directory)
 
-		$ cd ~/dxdemo
+		$ cd ~/dcus-booth-demo-2017/dxdemo
 		
 4. Deploy the application into Azure
 
